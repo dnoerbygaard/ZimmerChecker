@@ -1,0 +1,30 @@
+name: Playwright Hourly Job
+
+on:
+  schedule:
+    - cron: "*/15 * * * *" # every quarter hour
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - run: dotnet restore
+      - run: dotnet build
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-chromium
+
+      - run: pwsh bin/Debug/net8.0/playwright.ps1 install chromium
+
+      - run: dotnet run

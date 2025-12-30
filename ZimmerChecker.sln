@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZimmerChecker", "ZimmerChecker.csproj", "{824BFE64-671F-4039-9A1C-FDB2620AD795}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A9E0A2B3-DD7E-40BD-B86B-1F0068C642C7}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\hourlyExecution.yml = .github\workflows\hourlyExecution.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
