@@ -28,3 +28,9 @@ jobs:
       - run: pwsh bin/Debug/net8.0/playwright.ps1 install chromium
 
       - run: dotnet run
+        continue-on-error: true
+  
+      - uses: actions/upload-artifact@v4
+        with:
+          name: playwright-screenshots
+          path: screenshot1.png

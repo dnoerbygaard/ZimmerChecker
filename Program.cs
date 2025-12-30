@@ -26,6 +26,9 @@ class Program
         var page = await context.NewPageAsync();
 
         await page.GotoAsync("https://www.ticketmaster.dk/event/1279000466");
+        await Task.Delay(2000);
+
+        await page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshot1.png" });
 
         var consent = page.Locator("#onetrust-accept-btn-handler");
         await Task.Delay(5000);
