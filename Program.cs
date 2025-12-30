@@ -36,7 +36,7 @@ class Program
         }
 
         // Click button by text
-        var buttonName = "button:has-text(\"Se bedst ledige\")";
+        var buttonName = "button:has(svg.TicketIcon___StyledBaseSvg-sc-qlvy2z-0)";
         var listName = "ul.sc-8ba94237-0.bTHTpA";
 
         await page.WaitForSelectorAsync(buttonName);
